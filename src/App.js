@@ -10,6 +10,7 @@ function App() {
                 </div>
             </div>
             <div className="content-introduction"></div>
+            {/* TODO: na razie pusty, później coś dodać*/}
             <div className="content">
                 <div className="student-table-container">
                     <div className="student-table-header">
@@ -19,8 +20,7 @@ function App() {
                         <table>
                             <thead>         {/*naglowek*/}
                             <tr>            {/*wiersz*/}
-                                <th>Id</th>
-                                {/*komorka w wierszu naglowkowym*/}
+                                <th>Id</th>   {/*komorka w wierszu naglowkowym*/}
                                 <th>Imie</th>
                                 <th>Nazwisko</th>
                                 <th>Data urodzenia</th>
@@ -30,8 +30,7 @@ function App() {
                             </thead>
                             <tbody>         {/*cialo tabeli*/}
                             <tr>                {/*wiersz*/}
-                                <td>1</td>
-                                {/*komórka danych*/}
+                                <td>1</td>      {/*komórka danych*/}
                                 <td>Paweł</td>
                                 <td>Gaweł</td>
                                 <td>2021-10-10</td>
@@ -50,8 +49,6 @@ function App() {
                         </table>
                     </div>
                 </div>
-
-
             </div>
         </div>
     );
@@ -59,5 +56,5 @@ function App() {
 
 export default App;
 
-//Kierunek (enum): INFORMATYKA, FILOZOFIA
-//Student, int id, String imie, String nazwisko, Date dataUrodzenia, String nrIndeksu, Kierunek kierunek
+/* Kierunek (enum): INFORMATYKA, FILOZOFIA, ... */
+/* Student: int id, String imie, String nazwisko, Date dataUrodzenia; String nrIndeksu, Kierunek kierunek; */

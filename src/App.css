@@ -1,4 +1,4 @@
-html{
+html {
   background-color: #3587A4;
 }
 
@@ -7,7 +7,7 @@ html{
   overflow: auto;
 }
 
-.header{
+.header {
   background-color: #c1dff0;
   border-top: 0;
   border-left: 2px solid #3587A4;
@@ -21,11 +21,11 @@ html{
   align-items: center;
 }
 
-.header-app-name{
+.header-app-name {
   vertical-align: center;
 }
 
-.header-icon{
+.header-icon {
   height: 48px;
 
   /*to dodatkowy obszar dodany 'wenątrz obiektu' / wewnątrz border line */
@@ -43,36 +43,63 @@ html{
   display: flex;
 }
 
-.content{
+.content {
   background-color: #88ccf1;
   margin: 5px auto;
   width: 60vw;
+
   border: 1px solid black;
 }
 
 .student-table-container {
   margin: 5px;
-  border: 1px solid black;
+  border: 1px solid #A5D6F1;
+
   display: flex;
   flex-direction: column;
 }
 
-.student-table-header{
+.student-table-header {
+  margin: 5px 0;
+
+  font-size: 18px;
+  font-weight: bold;
+
   display: flex;
 }
 
-.student-table{
+.student-table {
+
 }
 
-table{
+table {
+  border-top: 1px solid #2D848A;
   width: 100%;
 }
 
-thead{
-  padding: 0 2px;
-  border-top: 1px solid #2D848A;
+.table-header-row {
+  background-color: #2D848A;
 }
 
-td{
+thead {
+  padding: 0 2px;
+}
+
+tr {
+  background-color: #C1DFF0;
+  transition: background-color 1s;
+}
+
+tr:hover {
+  background-color: #a6c1d2;
+  font-weight: bold;
+}
+
+th {
+  border: 1px solid red;
+}
+
+td {
   text-align: left;
+  border: 1px solid yellow;
 }
