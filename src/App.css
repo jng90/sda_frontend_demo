@@ -1,6 +1,9 @@
+html{
+  background-color: #3587A4;
+}
+
 .App {
   text-align: center;
-  background-color: #88ccf1;
   overflow: auto;
 }
 
@@ -38,4 +41,38 @@
   /*padding-left: 6px;*/
 
   display: flex;
+}
+
+.content{
+  background-color: #88ccf1;
+  margin: 5px auto;
+  width: 60vw;
+  border: 1px solid black;
+}
+
+.student-table-container {
+  margin: 5px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.student-table-header{
+  display: flex;
+}
+
+.student-table{
+}
+
+table{
+  width: 100%;
+}
+
+thead{
+  padding: 0 2px;
+  border-top: 1px solid #2D848A;
+}
+
+td{
+  text-align: left;
 }
