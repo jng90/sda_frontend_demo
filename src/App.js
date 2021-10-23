@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="header">
+        <img src={'gopher.png'} className="header-icon"/>
+            <div className="header-app-name">
+                SDA Frontend
+            </div>
+        </div>
+        <div className="content-introduction"></div>
+        <div className="content">
+            <div className="student-table-container">
+                <div className="student-table-header">
+
+                </div>
+            </div>
+
+
+        </div>
     </div>
   );
 }
 
 export default App;
+
+//Kierunek (enum): INFORMATYKA, FILOZOFIA
+//Student, int id, String imie, String nazwisko, Date dataUrodzenia, String nrIndeksu, Kierunek kierunek

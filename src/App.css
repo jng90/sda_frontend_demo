@@ -1,38 +1,41 @@
 .App {
   text-align: center;
+  background-color: #88ccf1;
+  overflow: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.header{
+  background-color: #c1dff0;
+  border-top: 0;
+  border-left: 2px solid #3587A4;
+  border-right: 2px solid #3587A4;
+  border-bottom: 1px solid #3587A4;
+  margin: auto; /*dodatkowy obszar który jest dodawany na zewnątrz granicy/border line */
+  width: 60vw; /*60 % view width szerokości obszaru widzianego*/
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header-app-name{
+  vertical-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-icon{
+  height: 48px;
+
+  /*to dodatkowy obszar dodany 'wenątrz obiektu' / wewnątrz border line */
+  /*padding: 0;*/
+  /*padding: 2px; !*wszędzie taki sam*!*/
+  /*padding: 10px 2px; !* padding top/bottom left/right*!*/
+  padding: 4px 6px 2px 6px; /* padding top/right/bottom/left */
+
+  /*poza tym możecie użyć poszzególnych kierunków:*/
+  /*padding-top: 4px;*/
+  /*padding-right: 6px;*/
+  /*padding-bottom: 2px;*/
+  /*padding-left: 6px;*/
+
+  display: flex;
 }
