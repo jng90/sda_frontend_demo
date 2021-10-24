@@ -1,6 +1,63 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
+import StudentTableComponent from "./components/StudentTableComponent";
+import StudentTableDivComponent from "./components/StudentTableDivComponent";
+
+// # Rodzaje wartości/deklaracji zmiennych/stalych
+// stała 'liczba' = 5
+const liczba = 5;
+
+// zmienna 'innaLiczba' = 10
+// var innaLiczba = 10;
+
+// zadeklaruj coś = 20
+let cos = 20;
+
+// # Rodzaje wartości/deklaracji zmiennych/stalych
 
 function App() {
+
+    const multiplicationButtonOnClick = () => {
+        var liczbaWFunkcji = '10'
+        if (liczbaWFunkcji == '10') {
+            // system out println
+            console.log("String True: " + liczbaWFunkcji);
+        } else {
+            console.log("String False: " + liczbaWFunkcji);
+        }
+        if (liczbaWFunkcji == 10) {
+            // system out println
+            console.log("Integer True: " + liczbaWFunkcji);
+        } else {
+            console.log("Integer False: " + liczbaWFunkcji);
+        }
+
+        if (liczbaWFunkcji === '10') {
+            // system out println
+            console.log("String === True: " + liczbaWFunkcji);
+        } else {
+            console.log("String === False: " + liczbaWFunkcji);
+        }
+        if (liczbaWFunkcji === 10) {
+            // system out println
+            console.log("Integer === True: " + liczbaWFunkcji);
+        } else {
+            console.log("Integer === False: " + liczbaWFunkcji);
+        }
+    }
+
+    const createMultiplicationTable = (x, y) => {
+        console.log('X: ' + x + ', Y: ' + y);
+
+        for (let i = 0; i < y; i++) {
+            let wiersz = '';
+            for (let j = 0; j < x; j++) {
+                wiersz += ((i + 1) * (j + 1)) + ' ';
+            }
+            console.log(wiersz);
+        }
+    }
+
     return (
         <div className="App">
             <div className="header">
@@ -12,42 +69,24 @@ function App() {
             <div className="content-introduction"></div>
             {/* TODO: na razie pusty, później coś dodać*/}
             <div className="content">
-                <div className="student-table-container">
-                    <div className="student-table-header">
-                        Tabela studentów
-                    </div>
-                    <div className="student-table">
-                        <table>
-                            <thead>         {/*naglowek*/}
-                            <tr>            {/*wiersz*/}
-                                <th>Id</th>   {/*komorka w wierszu naglowkowym*/}
-                                <th>Imie</th>
-                                <th>Nazwisko</th>
-                                <th>Data urodzenia</th>
-                                <th>Numer indeksu</th>
-                                <th>Kierunek</th>
-                            </tr>
-                            </thead>
-                            <tbody>         {/*cialo tabeli*/}
-                            <tr>                {/*wiersz*/}
-                                <td>1</td>      {/*komórka danych*/}
-                                <td>Paweł</td>
-                                <td>Gaweł</td>
-                                <td>2021-10-10</td>
-                                <td>123666</td>
-                                <td>INFORMATYKA</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jan</td>
-                                <td>Kowalski</td>
-                                <td>2011-03-11</td>
-                                <td>123665</td>
-                                <td>HYDRAULIKA</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <StudentTableComponent/>
+                <StudentTableDivComponent/>
+
+
+                <hr/>
+                <div className="multiplication-table">
+                    <input type="number" id='number_x'/>
+                    <input type="number" id='number_y'/>
+
+                    <button onClick={() => {
+                        let numberX = document.getElementById('number_x').value
+                        let numberY = document.getElementById('number_y').value
+
+                        // multiplicationButtonOnClick();
+                        createMultiplicationTable(numberX, numberY);
+                    }}>
+                        Kliknij mnie
+                    </button>
                 </div>
             </div>
         </div>
@@ -57,4 +96,5 @@ function App() {
 export default App;
 
 /* Kierunek (enum): INFORMATYKA, FILOZOFIA, ... */
-/* Student: int id, String imie, String nazwisko, Date dataUrodzenia; String nrIndeksu, Kierunek kierunek; */
+/* Student: int id, String imie, String nazwisko, Date dataUrodzenia; String nrIndeksu, Kierunek kierunek;
+*/

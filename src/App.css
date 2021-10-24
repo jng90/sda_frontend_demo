@@ -1,4 +1,4 @@
-html {
+body {
   background-color: #3587A4;
 }
 
@@ -72,6 +72,7 @@ html {
 
 }
 
+/*#################### TUTAJ PRACOWALISMY NA TABELI <table> ############################# */
 table {
   border-top: 1px solid #2D848A;
   width: 100%;
@@ -100,6 +101,38 @@ th {
 }
 
 td {
+  text-align: left;
+  border: 1px solid yellow;
+}
+
+/*#################### TUTAJ PRACOWALISMY NA TABELI <div> ############################# */
+.table-thead{
+  display: flex;
+  flex-direction: row;
+  border: 1px solid red;
+}
+
+.table-th{
+  display: flex;
+  flex: auto; /* mechanizm flex, grow proportion 1 */
+  font-weight:bold;
+  border: 1px solid red;
+  background-color: #C1DFF0;
+}
+
+.table-row{
+  display: flex;
+  flex-direction: row;
+  transition: background-color 1s;
+  background-color: #C1DFF0;
+}
+
+.table-row:hover {
+  background-color: #a6c1d2;
+  font-weight: bold;
+}
+
+.table-td {
   text-align: left;
   border: 1px solid yellow;
 }
