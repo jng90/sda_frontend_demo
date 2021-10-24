@@ -10,7 +10,7 @@ const MultiplicationTable = () => {
     for (let i = 0; i < number; i++) {
         let kolumny = [];
         for (let j = 0; j < number; j++) {
-            kolumny.push(((i+1) * (j+1)));
+            kolumny.push((i + 1) * (j + 1));
         }
         wiersze.push(kolumny);
     }
@@ -22,30 +22,34 @@ const MultiplicationTable = () => {
 //            ]
 
 
+    const updateNumber = (newNumber) => {
+        let number = document.getElementById('number_field').value
+        console.log(number);
+
+        setNumber(number);       // podmiana wartości
+    }
+
+    const createColumn = (kolumna) => {
+        return (<td key={kolumna}>{kolumna}</td>)
+    }
+
+    const createRow = (wiersz) => {
+        // [1, 2, 3]
+        const kolumny = wiersz.map(createColumn);
+        return (<tr key={wiersz}>{kolumny}</tr>)
+    }
+
+    //rendering/odrysowywanie - zwracamy html
     return (<div className="multiplication-table">
         <input type="number" id='number_field'/>
 
-        <button onClick={() => {
-            let number = document.getElementById('number_field').value
-            console.log(number);
-
-            setNumber(number);    // podmiana kolekcji
-
-        }}>
+        <button onClick={updateNumber}>
             Kliknij mnie
         </button>
         <table>
             <tbody>
             {
-                wiersze.map(wiersz => {
-                    // [1, 2, 3]
-                    const kolumny = wiersz.map(kolumna => {
-                        return (<td key={kolumna}>{kolumna}</td>)
-                    });
-
-                    return (<tr key={wiersz}>{kolumny}</tr>)
-                })
-            }
+                wiersze.map(createRow)}
             </tbody>
         </table>
     </div>);
