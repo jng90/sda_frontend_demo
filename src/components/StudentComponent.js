@@ -31,6 +31,17 @@ const StudentComponent = () => {
         console.log("Dodano studenta: " + student);
     }
 
+    const removeStudent = (studentId) => {
+        let studentListCopy = [...studentList];  //stworzenie kopii listy
+        for (let i=0; i < studentListCopy.length; i++) {
+            if (studentListCopy[i].id === studentId){
+                studentListCopy.splice(i, 1);  //splice usuwa z pozycji o numerze 'i' ilosc elementow : 1
+                break;
+            }
+        }
+        setStudentList(studentListCopy);
+    }
+
     const bumpCounter = () => {
         // pobierze licznik
         let currentCounter = getCounter();
@@ -59,7 +70,7 @@ const StudentComponent = () => {
 
 return (<>
     <StudentTableComponent students={studentList}/> {/*tag ktory nie ma tresci i jest zamkniety*/}
-    <StudentTableDivComponent students={studentList}/>
+    <StudentTableDivComponent students={studentList} removeStudentFunction={removeStudent}/>
 
     <hr/>
     <StudentForm addStudentFunction={addStudent}/>
