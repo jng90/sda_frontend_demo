@@ -1,7 +1,7 @@
 import StudentTableComponent from "./StudentTableComponent";
 import StudentTableDivComponent from "./StudentTableDivComponent";
 import StudentForm from "./StudentForm";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const StudentComponent = () => {
 
@@ -11,6 +11,7 @@ const StudentComponent = () => {
     // funkcja ktorej mozna uzyc zeby dodac nowego studenta
     const addStudent = (name, surname, birthDate, index) => {
         const student = {
+            "id": bumpCounter(),
             "name": name,
             "surname": surname,
             "birthDate": birthDate,
@@ -26,15 +27,42 @@ const StudentComponent = () => {
 
         setStudentList(studentListCopy);
 
+        console.log("Dodano studenta: " + student);
     }
 
-    return (<>
-        <StudentTableComponent/> {/*tag ktory nie ma tresci i jest zamkniety*/}
-        <StudentTableDivComponent/>
+    const bumpCounter = () => {
+        // pobierze licznik
+        let currentCounter = getCounter();
 
-        <hr/>
-        <StudentForm/>
-    </>);
+        // zwiekszy i zapiszes
+        currentCounter++;
+        localStorage.setItem('student-next-id', currentCounter);
+
+        // zwroci zwiekszony
+        return currentCounter;
+    }
+
+    const getCounter = () => {
+        let nextId = localStorage.getItem('student-next-id');
+        // if (zmienna) false gdy:
+        //      - zmienna = 0
+        //      - zmienna = false
+        //      - zmienna = null
+        //      - zmienna = undefined
+
+        if (nextId){
+            return nextId;
+        }
+        return 1;
+    }
+
+return (<>
+    <StudentTableComponent students={studentList}/> {/*tag ktory nie ma tresci i jest zamkniety*/}
+    <StudentTableDivComponent students={studentList}/>
+
+    <hr/>
+    <StudentForm addStudentFunction={addStudent}/>
+</>);
 }
 
 export default StudentComponent;

@@ -82,3 +82,7 @@ td {
     text-align: left;
     border: 1px solid yellow;
 }
+
+.centered-text{
+    text-align: center;
+}

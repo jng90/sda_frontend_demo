@@ -3,7 +3,8 @@ import './StudentForm.css'
 import {Button, Col, Container, Row} from "react-bootstrap";
 import {Input} from "@material-ui/core";
 
-const StudentForm = () => {
+// props = properties przekazywana przy tworzeniu komponentow
+const StudentForm = (props) => {
 
     const submitStudent = () => {
       let imie = document.getElementById("input-imie").value;
@@ -11,7 +12,9 @@ const StudentForm = () => {
       let dataUr = document.getElementById("input-input-birth-date").value;
       let index = document.getElementById("input-index").value;
 
-        console.log(imie + " " + nazwisko + " " + dataUr + " " + index)
+        console.log(imie + " " + nazwisko + " " + dataUr + " " + index);
+        props.addStudentFunction(imie, nazwisko, dataUr, index);
+
     }
 
     return (
@@ -27,13 +30,13 @@ const StudentForm = () => {
                                 <label className={'form-input-label'}>Imie:</label>
                             </Col>
                             <Col md={4}>
-                                <Input id={'input-imie'} className={'form-input-field'}></Input>
+                                <Input placeholder={"Imie"} id={'input-imie'} className={'form-input-field'}></Input>
                             </Col>
                             <Col md={2}>
                                 <label className={'form-input-label'}>Nazwisko:</label>
                             </Col>
                             <Col md={4}>
-                                <Input id={'input-nazwisko'} className={'form-input-field'}></Input>
+                                <Input placeholder={"Nazwisko"} id={'input-nazwisko'} className={'form-input-field'}></Input>
                             </Col>
                         </Row>
                         <Row>
@@ -41,13 +44,13 @@ const StudentForm = () => {
                                 <label className={'form-input-label'}>Data urodzenia:</label>
                             </Col>
                             <Col md={4}>
-                                <Input id={'input-input-birth-date'} className={'form-input-field'}></Input>
+                                <Input placeholder={"Data urodzenia"} id={'input-input-birth-date'} className={'form-input-field'}></Input>
                             </Col>
                             <Col md={2}>
                                 <label className={'form-input-label'}>Numer indeksu:</label>
                             </Col>
                             <Col md={4}>
-                                <Input id={'input-index'} className={'form-input-field'}></Input>
+                                <Input placeholder={"Numer indeksu"} id={'input-index'} className={'form-input-field'}></Input>
                             </Col>
                         </Row>
                         <Row>
