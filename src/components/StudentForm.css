@@ -1,14 +1,32 @@
-
-.form-input-label{
+.form-input-label {
     text-align: left;
     font-weight: bold;
     width: 100%;
 }
 
-.form-input-field{
+.form-input-field {
     width: 100%;
 }
 
 .form-input-button{
     width: 100%;
+}
+
+.form-wrapper{
+    margin: 5px;
+    border: 1px solid #A5D6F1;
+}
+
+.form-title{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.form-container{
+}
+
+.form-row{
+    border: 1px solid #A5D6F1;
+    margin: 1px;
+    background-color: #c1dff0;
 }

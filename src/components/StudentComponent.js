@@ -9,13 +9,14 @@ const StudentComponent = () => {
     const [studentList, setStudentList] = useState([]);
 
     // funkcja ktorej mozna uzyc zeby dodac nowego studenta
-    const addStudent = (name, surname, birthDate, index) => {
+    const addStudent = (name, surname, birthDate, index, faculty) => {
         const student = {
             "id": bumpCounter(),
             "name": name,
             "surname": surname,
             "birthDate": birthDate,
-            "index": index
+            "index": index,
+            "faculty": faculty
         }
 
         // [] - deklaracja listy

@@ -9,7 +9,7 @@ const StudentTableComponent = (props) => {
             <td>{student.surname}</td>
             <td>{student.birthDate}</td>
             <td>{student.index}</td>
-            <td>N/A</td>
+            <td>{student.faculty}</td>
         </tr>)
     }
 
