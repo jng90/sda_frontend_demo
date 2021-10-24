@@ -1,3 +1,4 @@
+import "./StudentTable.css"
 
 const StudentTableDivComponent = () => {
 

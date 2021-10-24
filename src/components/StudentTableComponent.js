@@ -1,4 +1,4 @@
-
+import "./StudentTable.css"
 
 const StudentTableComponent = () => {
 
