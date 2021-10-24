@@ -2,6 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import StudentTableComponent from "./components/StudentTableComponent";
 import StudentTableDivComponent from "./components/StudentTableDivComponent";
+import {useState} from "react";
+import MultiplicationTable from "./components/MultiplicationTable";
 
 // # Rodzaje wartości/deklaracji zmiennych/stalych
 // stała 'liczba' = 5
@@ -17,47 +19,6 @@ let cos = 20;
 
 function App() {
 
-    const multiplicationButtonOnClick = () => {
-        var liczbaWFunkcji = '10'
-        if (liczbaWFunkcji == '10') {
-            // system out println
-            console.log("String True: " + liczbaWFunkcji);
-        } else {
-            console.log("String False: " + liczbaWFunkcji);
-        }
-        if (liczbaWFunkcji == 10) {
-            // system out println
-            console.log("Integer True: " + liczbaWFunkcji);
-        } else {
-            console.log("Integer False: " + liczbaWFunkcji);
-        }
-
-        if (liczbaWFunkcji === '10') {
-            // system out println
-            console.log("String === True: " + liczbaWFunkcji);
-        } else {
-            console.log("String === False: " + liczbaWFunkcji);
-        }
-        if (liczbaWFunkcji === 10) {
-            // system out println
-            console.log("Integer === True: " + liczbaWFunkcji);
-        } else {
-            console.log("Integer === False: " + liczbaWFunkcji);
-        }
-    }
-
-    const createMultiplicationTable = (x, y) => {
-        console.log('X: ' + x + ', Y: ' + y);
-
-        for (let i = 0; i < y; i++) {
-            let wiersz = '';
-            for (let j = 0; j < x; j++) {
-                wiersz += ((i + 1) * (j + 1)) + ' ';
-            }
-            console.log(wiersz);
-        }
-    }
-
     return (
         <div className="App">
             <div className="header">
@@ -71,26 +32,12 @@ function App() {
             <div className="content">
                 <StudentTableComponent/>
                 <StudentTableDivComponent/>
+                <MultiplicationTable/>
 
-
-                <hr/>
-                <div className="multiplication-table">
-                    <input type="number" id='number_x'/>
-                    <input type="number" id='number_y'/>
-
-                    <button onClick={() => {
-                        let numberX = document.getElementById('number_x').value
-                        let numberY = document.getElementById('number_y').value
-
-                        // multiplicationButtonOnClick();
-                        createMultiplicationTable(numberX, numberY);
-                    }}>
-                        Kliknij mnie
-                    </button>
-                </div>
             </div>
         </div>
-    );
+    )
+        ;
 }
 
 export default App;
