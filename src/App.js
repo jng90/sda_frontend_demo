@@ -5,6 +5,7 @@ import StudentTableDivComponent from "./components/StudentTableDivComponent";
 import {useState} from "react";
 import MultiplicationTable from "./components/MultiplicationTable";
 import StudentForm from "./components/StudentForm";
+import StudentComponent from "./components/StudentComponent";
 
 // # Rodzaje wartości/deklaracji zmiennych/stalych
 // stała 'liczba' = 5
@@ -31,12 +32,10 @@ function App() {
             <div className="content-introduction"></div>
             {/* TODO: na razie pusty, później coś dodać*/}
             <div className="content">
-                <StudentTableComponent/>
-                <StudentTableDivComponent/>
-                <hr/>
-                <StudentForm/>
-                <MultiplicationTable/>
+                <StudentComponent/>
 
+                <hr/>
+                <MultiplicationTable/>
             </div>
         </div>
     )
